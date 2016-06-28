@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'post'], function () {
+    Route::get('index', ['uses' => 'PostController@index', 'as' => 'post.index']);
+    Route::get('trash', ['uses' => 'PostController@trash', 'as' => 'post.trash']);
+    Route::get('create', ['uses' => 'PostController@create', 'as' => 'post.create']);
+    Route::get('edit/{id}', ['uses' => 'PostController@edit', 'as' => 'post.edit']);
+    Route::get('delete/{id}', ['uses' => 'PostController@delete', 'as' => 'post.delete']);
+    Route::get('restore/{id}', ['uses' => 'PostController@restore', 'as' => 'post.restore']);
+    Route::post('update', ['uses' => 'PostController@update', 'as' => 'post.update']);
+    Route::post('store', ['uses' => 'PostController@store', 'as' => 'post.store']);
+});
