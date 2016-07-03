@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use Clockwork\Support\Laravel\ClockworkMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -15,6 +16,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        ClockworkMiddleware::class,
     ];
 
     /**

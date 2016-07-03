@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Shanghai',
 
     /*
     |--------------------------------------------------------------------------
@@ -157,7 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-
+        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
     ],
 
     /*
